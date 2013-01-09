@@ -6,4 +6,4 @@ Just like that predecessor, this creates IDs without a credit card, perfect for 
 
 NOTE: Apple may throttle the amount of IDs you can create at once. Please see the thread on enterpriseiOS for more info. Also, this has only been tested in the US version of iTunes, please submit pull requests, or contact me with screenshots of the options!
 
-Also, if you CAN have people put in a credit card to use the IDs you're tasked with creating, consider using [Fake](Fakeapp.com) on [Apple's site](https://appleid.apple.com/cgi-bin/WebObjects/MyAppleId.woa/wa/createAppleId?localang=en_US)
+Also, if you CAN have people put in a credit card to use the IDs you're tasked with creating, consider using [Fake](http://Fakeapp.com) on [Apple's site](https://appleid.apple.com/cgi-bin/WebObjects/MyAppleId.woa/wa/createAppleId?localang=en_US)
