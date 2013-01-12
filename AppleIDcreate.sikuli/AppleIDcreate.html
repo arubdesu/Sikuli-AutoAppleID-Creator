@@ -1,0 +1,134 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }  
+         
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>AppleIDcreate.sikuli</h2> <a href="AppleIDcreate.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> os
+<span class="kw">import</span> sys
+<span class="kw">import</span> csv
+idIndex = <span class="dig">1</span>
+csvRead = []
+csvReader = csv.reader(open(<span class="str">'/Users/Shared/ids.csv'</span>))
+<span class="kw">for</span> row <span class="kw">in</span> csvReader:
+    csvRead.append(row)
+<span class="kw">while</span> idIndex &lt; len(csvRead):
+    appleid = str(csvRead[idIndex][<span class="dig">0</span>])
+    password = str(csvRead[idIndex][<span class="dig">1</span>])
+    birthMonth = str(csvRead[idIndex][<span class="dig">2</span>])
+    birthDay = str(csvRead[idIndex][<span class="dig">3</span>])
+    birthYear = str(csvRead[idIndex][<span class="dig">4</span>])
+    firstName = str(csvRead[idIndex][<span class="dig">5</span>])
+    lastName = str(csvRead[idIndex][<span class="dig">6</span>])
+    streetAddress = str(csvRead[idIndex][<span class="dig">7</span>])
+    city = str(csvRead[idIndex][<span class="dig">8</span>])
+    stateCode = str(csvRead[idIndex][<span class="dig">9</span>])
+    zipCode = str(csvRead[idIndex][<span class="dig">10</span>])
+    areaCode = str(csvRead[idIndex][<span class="dig">11</span>])
+    phoneNum = str(csvRead[idIndex][<span class="dig">12</span>])
+    openApp(<span class="str">"iTunes"</span>)
+    <span class="skw">click</span>(<img src="Screen Shot 2013-01-08 at 9.36.17 AM.png" />)
+    <span class="skw">type</span>(<span class="str">"iBooks"</span>+Key.ENTER)
+    <span class="cmt"># clear search field, just 'cause
+</span>    <span class="skw">click</span>(<img src="1357656258285.png" />)
+    onAppear(<img src="iPadAppsEBoo.png" />, <span class="skw">click</span>(<img src="LiBooksBooks.png" />))
+    <span class="cmt"># appleID login should appear
+</span>    <span class="skw">wait</span>(<img src="SignIntodown.png" />)
+    <span class="skw">click</span>(<img src="CreateAppleI.png" />)
+    <span class="skw">wait</span>(<img src="IDclickcanon.png" />, <span class="dig">12</span>)
+    <span class="skw">click</span>(<img src="IDclickcanon.png" />)
+    <span class="skw">wait</span>(<img src="innrirnnrntn.png" />, <span class="dig">12</span>)
+    <span class="skw">click</span>(<img src="innrirnnrntn.png" />)
+    <span class="cmt"># accept terms checkbox
+</span>    <span class="skw">click</span>(<img src="1357656934662.png" />)
+    <span class="cmt"># big details form
+</span>    <span class="skw">wait</span>(<img src="EmailemaiIex.png" />, <span class="dig">12</span>)
+    <span class="skw">type</span>(<img src="EmailemaiIex.png" />, appleid + Key.TAB + password + Key.TAB + password +
+            Key.TAB + Key.DOWN + Key.DOWN + Key.ENTER + Key.TAB + <span class="str">"Newton"</span> +
+            Key.TAB + Key.DOWN + Key.DOWN + Key.ENTER + Key.TAB + <span class="str">"Apple"</span> +
+            Key.TAB + Key.DOWN + Key.DOWN + Key.DOWN + Key.ENTER + Key.TAB + <span class="str">"Steve"</span> +
+            Key.TAB + Key.TAB + birthMonth + Key.ENTER + Key.TAB +
+            birthDay + Key.ENTER + Key.TAB + birthYear)
+    <span class="skw">click</span>(<img src="WouldNeldMn.png" />)
+    <span class="skw">click</span>(<img src="NlNi.png" />)
+    <span class="skw">type</span>(Key.PAGE_DOWN)
+    <span class="skw">click</span>(<img src="1357659787705.png" />)
+    <span class="skw">wait</span>(<img src="sclickhereal.png" />, <span class="dig">12</span>)
+    <span class="skw">click</span>(<img src="BillingAddre.png" />)
+    <span class="skw">click</span>(<img src="Screen Shot 2013-01-08 at 12.52.37 PM.png" />)
+    <span class="skw">type</span>(<img src="BillingAddre-1.png" />, firstName + Key.TAB + lastName + Key.TAB + streetAddress +
+             Key.TAB + Key.TAB + city + Key.TAB + stateCode + Key.TAB + zipCode +
+             Key.TAB + areaCode + Key.TAB + phoneNum)
+
+    <span class="skw">click</span>(<img src="CreateAppleI-1.png" />)
+    <span class="skw">wait</span>(<img src="1357672144168.png" />, <span class="dig">12</span>)
+    idIndex += <span class="dig">1</span>
+</pre>
+</body>
+</html>
